@@ -21,3 +21,5 @@ public class App {
     }
 }
 ```
+
+Assim para enviar novamente para o repositório local, basta efetuar o comando `git push origin `
