@@ -22,4 +22,14 @@ public class App {
 }
 ```
 
-Assim para enviar novamente para o repositório local, basta efetuar o comando `git push origin `
+Assim para enviar novamente para o repositório local, basta efetuar o comando `git push origin`
+# Iniciando com Java
+
+1. Todo arquivo Java deve começar com letra maiúscula. Diferente das variáveis que começam com letras minúsculas.
+
+>Exemplo: Calculadora.java; MinhaClasse.java
+
+2. O nome da classe deve ser o mesmo nome que o arquivo.
+
+3. Caso eu não queira modificar o valor de uma variável, devo nomea-la toda maiúscula e inicializa-la com final
+>Exemplo: `final String BR = Brasil`
