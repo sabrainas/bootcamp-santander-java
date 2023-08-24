@@ -1,3 +1,4 @@
+package edu.sabrina.anatomiadeclasses;
 public class MinhaClasse {
     public static void main(String [] args){
         //System.out.println("Segundo programa!\nestamos criando um executavel dentro de MinhaClasse");    

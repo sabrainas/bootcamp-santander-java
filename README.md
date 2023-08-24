@@ -54,3 +54,51 @@ public class App {
 ```
 
 5. A indentação gera uma hierarquia no código Java. São boas práticas de desenvolvimento.
+
+6. Para criar um pacote dentro do meu diretório Java, preciso criar uma pasta com o prefixo com o tipo do projeto, outra com a identidade, seja o da empresa ou projeto pessoal, e por fim o nome do projeto.
+
+```
+>comercial = com
+
+>open source = opensource
+
+>educacional = edu
+
+>organizacional = org
+```
+
+>Exemplo: com.hypertech.analises
+
+>Exemplo2: edu.sabrina.bootcamp
+
+
+
+7. **Java Beans** = é iniciativa conceitual para existir uma estruturação da escrita, para obter códigos mais claros e entendível.
+
+    Existem variáveis que não são recomendadas. Como representadas abaixo:
+
+```
+double salMedio = 1500.23; //variáveis abreviadas
+String emails = "aluno@escola.com"; //o tipo de dado corresponde a apenas um valor, o ideal seria 'String email'
+String myName = "SABRINA";  //não é interessante variáveis em outro idioma
+```
+
+Recomendado:
+
+```
+double salarioMedio = 1500.23;
+String email = "aluno@escola.com";
+String [] emails = {"aluno@escola.com", "professor@escola.com"};
+String meuNome = "SABRINA"
+```
+
+
+Os métodos devem ser nomeados como verbos, com mistura de letras minúsculas e maiúsculas.
+
+```
+somar(int n1, int n2){}
+abrirConexao(){}
+concluirProcessamento(){}
+findById(int id){}
+calcularImprimir(){} //este método esta errado, ele possui sentido ambíguo.
+```

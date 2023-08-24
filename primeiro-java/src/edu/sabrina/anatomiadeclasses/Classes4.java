@@ -1,3 +1,4 @@
+package edu.sabrina.anatomiadeclasses;
 public class Classes4 {
     public static void main(String [] args){
         int mediaFinal = 6;
@@ -8,4 +9,5 @@ public class Classes4 {
         else
             System.out.println("APROVADO");
     }
+
 }
