@@ -102,3 +102,69 @@ concluirProcessamento(){}
 findById(int id){}
 calcularImprimir(){} //este método esta errado, ele possui sentido ambíguo.
 ```
+
+### Tipos e Variáveis
+
+Oitos tipos primitivos em Java são:
+- int
+- byte
+- short
+- long
+- float 
+- double
+- boolean 
+- char
+
+Esses tipos não são considerados objetos, portanto representam valores brutos. São armazenados diretamente na pilha de memória. (Memory Stack)
+
+Tipos Primitivos:
+
+| Tipo | Memória | Valor Mínimo | Valo Máximo |
+|------|---------|--------------|-------------|
+|byte | 1 byte | -128 | 127 |
+|short | 2 bytes | -32768 | 32767
+|int | 4 bytes | -2147483648 | 2147483647 |
+|long | 8 bytes| -9223372036854775808 | 9223372036854775807 |
+
+Atualmente tipos `short` e `byte` se tornaram desnecessários para uso.
+
+Tipos Primitivos com partes fracionárias:
+
+| Tipo | Memória | Valor Mínimo | Valo Máximo |
+|------|---------|--------------|-------------|
+|float | 4 bytes | -3,4028E + 38 | 3,4028E + 38 |
+|double | 8 bytes | -1,7976E + 308 | 1,7976E + 308 |
+
+`float` é menos utilizado pois sofre de uma limitação em seu uso. Tipo float sempre pede um F no final da variável.
+
+A estrutura para a declaração de uma variável sempre vai ser: 
+`<Tipo> <nomeVariavel> <atribuicaoDeValorOpcional>`
+`int anoFabricacao = 2021;`
+
+Tipo de Dado + Identificação + Valor Atribuído.
+
+8. **Constantes**: São valores armazenados em memória que não podem ser modificados depois de declarados, são sempre escritas em caixa alta e com a palavra reservada `final` seguida do tipo.
+
+### Operadores
+
+São símbolos especiais que tem um significado próprio para a linguagem e estão associados a determinadas operações.
+
+Atribuição: `=`.
+Aritméticos: `+`, `-`, `*`, `/`.
+Unários: aplicados juntamentes com outro operador aritmético. `+`, `-`, `++`, `--`, `!`.
+Ternário: forma resumida de definir uma condição entre dois valores. `?:`
+`<Expressão Condicional> ? <Caso condição seja true> : <Caso condição seja false>`.
+Relacionais: avaliam a relação entre duas variáveis ou expressões. `==`, `!=`, `>`, `<`, `>=`, `<=`.
+Obs: Objetos são comparados de uma outra estrutura.
+Sendo ele `equals`.
+Lógicos: expressões lógicas. `&&`, `||`.
+
+### Métodos 
+É a definição para uma classe, correspondem a funções ou subrotinas.
+- Deve ser nomeado como verbo
+- Seguir o padrão camelCase
+- Qual a proposta principal do método? Você deve se perguntar constantemente até compreender a real finalidade do mesmo.
+- Qual o tipo de retorno esperado após executar o método? Você deve analisar se o método será responsável por retornar algum valor ou não. Obs: caso não retorne nehum valor, ele será representado pela palavra chave `void`. 
+- Quais os parâmetros necessários para execução do método? Os métodos as vezes precisam de argumentos como critérios para a execução.
+- O método possui o risco de apresentar alguma exceção? Exceções são comuns na execução de métodos, as vezes é necessário prever e tratar a possível existência de uma exceção.
+- Qual a visibilidade do método? Será necessário que o método seja visível a toda aplicação, somente em mesmo pacotes, através de herança ou somente a nível da própria classe.
