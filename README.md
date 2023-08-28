@@ -168,3 +168,63 @@ Lógicos: expressões lógicas. `&&`, `||`.
 - Quais os parâmetros necessários para execução do método? Os métodos as vezes precisam de argumentos como critérios para a execução.
 - O método possui o risco de apresentar alguma exceção? Exceções são comuns na execução de métodos, as vezes é necessário prever e tratar a possível existência de uma exceção.
 - Qual a visibilidade do método? Será necessário que o método seja visível a toda aplicação, somente em mesmo pacotes, através de herança ou somente a nível da própria classe.
+
+### Palavras Reservadas
+
+A linguagem Java possui 52 palavras reservadas. Todas são classificadas em grupos e escritas com letra minúscula, sendo identificada com uma cor especial pela maioria das IDE's.
+Sendo elas: 
+
+- abstract: classe que não pode ser instanciada ou método que precisa ser implementado por uma subclasse não abstrata.
+- continue 
+- goto 
+- package: especifica a que pacote todas as classes de um arquivo pertencem.
+- synchronized: indica que um método só pode ser acessado por uma thread de cada vez.
+- assert
+- default
+- if 
+- private: acesso apenas dentro da classe.
+- this: refere-se a instância atual do objeto.
+- boolean 
+- do 
+- implements: indica as interfaces que uma classe irá implementar.
+- protected: acesso por classes no mesmo pacote e subclasses.
+- throw: usado para passar uma exceção para o método que o chamou.
+- break 
+- double 
+- import: importa pacotes ou classes para dentro do código.
+- public: acesso de qualquer classe.
+- throws: indica que um método pode passar uma exceção para o método que o chamou 
+- byte
+- else 
+- instanceof 
+- return 
+- transient: impede a serialização de campos
+- case
+- extends: indica a superclasse que a subclasse está estendendo.
+- int
+- short
+- try
+- catch 
+- final: impossibilita que uma classe seja estendida.
+- interface: especifica uma interface
+- static: faz método ou variável pertencer à classe ao invés de às instâncias.
+- void: indica que um método não tem retorno de valor.
+- char
+- finally 
+- long 
+- strictfp: usado em frente a um método ou classe para indicar que os numeros de pontos flutuante seguirão as regras de ponto flutuante em todas as expressões
+- volatile: indica que uma variável pode ser alterada durante o uso de threads
+- class: especifica uma classe
+- float 
+- native: indica que um método está escrito em uma linguagem dependente de plataforma, como C,
+- super: refere-se a superclasse imediata
+- while
+- const 
+- for
+- new: instancia um novo objeto, chamando seu construtor.
+- switch
+
+**Link docs: https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/package-summary.html**
+
+### Scanner
+A classe **Scanner** permite que o usuário tenha uma interação mais assertiva com o nosso programa
