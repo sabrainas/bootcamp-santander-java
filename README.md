@@ -228,3 +228,6 @@ Sendo elas:
 
 ### Scanner
 A classe **Scanner** permite que o usuário tenha uma interação mais assertiva com o nosso programa
+
+### For Each
+O uso do for/each está relacionado com um cenário onde contenha um array ou coleção, e assim, a interação é baseada aos elementos da coleção
