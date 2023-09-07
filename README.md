@@ -229,5 +229,39 @@ Sendo elas:
 ### Scanner
 A classe **Scanner** permite que o usuário tenha uma interação mais assertiva com o nosso programa
 
+```
+import java.util.Locale;
+import java.util.Scanner;
+
+public class App {
+    public static void main(String[] args) throws Exception {
+        Scanner scanner = new Scanner(System.in).useLocale(Locale.US);
+    }
+}
+```
+
 ### For Each
 O uso do for/each está relacionado com um cenário onde contenha um array ou coleção, e assim, a interação é baseada aos elementos da coleção
+```
+int[] numbers = {1, 2, 3, 4, 5};
+
+for (int num : numbers) {
+    System.out.println(num);
+}
+```
+
+### Exceções
+O Java é capaz de lançar exceções quando ocorre um erro, mandando essa mensagem de erro para o usuário.
+
+`try` - permite definir um bloco de código para ser testado;
+`catch ` - é lançado quando ocorre um erro no bloco `try`
+`finally` - define um bloco de código a ser executado independente se há erros ou não
+
+```
+try{
+    //bloco a ser testado
+}
+catch(nomedaexcecao){
+    //retorno ao usuário
+}
+```
