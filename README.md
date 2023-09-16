@@ -265,3 +265,160 @@ catch(nomedaexcecao){
     //retorno ao usuário
 }
 ```
+
+## Programação Orientada a Objetos com Java
+
+A POO é um paradigma da programação que pretende aproximar o mundo real do virtual. Ou seja, transformar objetos e seus comportamentos em linhas de código.
+Esse paradigma apresentam alguns conceitos principais, sendo eles Objetos e Classes.
+Os objetos são uma aglutinação de estados e comportamentos, ele é um elemento que representa alguma entidade, seja ela abstrata ou concreta. Depende do negócio.
+A classe é um conjunto de objetos com características em comum. O comportamento é definido por métodos (como se fossem funções na programação estruturada, pois são ações daquele objeto) e também por atributos (o que seriam as variáveis, pois podem ser String, Int, Double, Boolean, Float e Array).
+Instanciar é o ato de criar um objeto a partir de uma estrutura definida.
+```
+// Criando a classe Student
+// Com todas as características e compartamentos aplicados
+
+public class Estudante {
+    String nome;
+    int idade;
+    Sex sexo;
+
+    void comendo(String comer){
+      System.out.Println("O aluno está comendo");
+    }
+    void bebendo(Juice juice){
+      System.out.Println("O aluno está bebendo");
+    }
+    void correndo(){
+      System.out.Println("O aluno está correndo");
+    }
+}
+
+```
+
+```
+// Criando objetos a partir da classe Estudante
+
+public class Escola {
+    public static void main(String[] args) throws Exception {
+      Student student1 = new Estudante();
+      student1.nome= "John";
+      student1.idade= 12;
+      student1.sexo= Sex.MALE;
+
+      Student student2 = new Student();
+      student2.nome= "Sophia";
+      student2.idade= 10;
+      student2.sexo= Sex.FEMALE;
+
+      Student student3 = new Student();
+      student3.nome= "Lily";
+      student3.idade= 11;
+      student3.sexo= Sex.FEMALE;
+    }
+}
+```
+
+### Pacotes
+A linguagem Java é composta por inúmeras classes. Com isso, foi necessário organizá-las atraves de pacotes.
+Eles recebem uma nomenclatura para cada tipo de negócio ou projeto.
+Ex
+`Comercial: com.powersoft;`
+`Governamental: gov.powersoft;`
+`Código-aberto: org.powersoft;`
+
+Agora para a organização de classes:
+`model : Classes que representam a camada e modelo da aplicação : Cliente, Pedido, NotaFiscal, Usuario;`
+`repository: Classes ou interfaces que possuem a finalidade de interagir com tabelas no banco de dados: ClienteRepository;`
+`service: Classes que contém regras de negócio do sistema : ClienteService possui o método validar o CPF, do cliente cadastrado;`
+`controller: Classes que possuem a finalidade de, disponibilizar os nossos recursos da aplicação, para outras aplicações via padrão HTTP;`
+`view: Classes que possuem alguma interação, com a interface gráfica acessada pelo usuário;`
+`util: Pacote que contém, classes utilitárias do sistema: FormatadorNumeroUtil, ValidadorUtil.`
+
+### Getters e Setters
+Os métodos "Getters" e "Setters" são utilizados para buscar valores de atributos ou definir novos valores de atributos, de instâncias de classes.
+O método Getter, retorna o valor do atributo especificado.
+O método get, é responsável por obter o valor atual do atributo, logo ele precisa ser public, retornar um tipo correspondente ao valor, Ex: `public String getNome() {};`
+O método Setter, define outro novo valor para o atributo especificado.
+O método set, é responsável por definir ou modificar o valor de um atributo em um objeto, logo, ele também precisa ser public, receber um parâmetro do mesmo tipo da variável, mas não retorna nenhum valor void. Ex: `public void setNome(String newNome);`
+
+Ex:
+```
+//arquivo Aluno.java
+public class Aluno {
+	private String nome;
+	private int idade;
+	
+	public String getNome() {
+		return nome;
+	}
+	public void setNome(String newNome) {
+		nome = newNome;
+	}
+	public int getIdade() {
+		return idade;
+	}
+	public void setIdade(int newIdade) {
+		this.idade = newIdade;
+	}
+}
+```
+
+```
+//arquivo Escola.java
+public class Escola {
+	public static void main(String[] args) {
+		Aluno sabrina = new Aluno();
+		felipe.setNome("Sabrina");
+		felipe.setIdade(9);
+		
+		System.out.println("O aluno " + sabrina.getNome() + " tem " + sabrina.getIdade() + " anos ");	
+	}
+}
+```
+
+### Construtores
+Também conhecidos pelo inglês constructors, os construtores são os responsáveis por criar o objeto em memória, ou seja, instanciar a classe que foi definida.
+Ex:
+```
+public class Carro{
+
+private String cor;
+private double preco;
+private String modelo;
+
+/* CONSTRUTOR PADRÃO */
+public Carro(){
+
+}
+
+/* CONSTRUTOR COM 2 PARÂMETROS */
+public Carro(String modelo, double preco){
+//Se for escolhido o construtor sem a COR do veículo
+// definimos a cor padrão como sendo PRETA
+this.cor = “PRETA”;
+this.modelo = modelo;
+this.preco = preco;
+}
+
+/* CONSTRUTOR COM 3 PARÂMETROS */
+public Carro(String cor, String modelo, double preco){
+this.cor = cor;
+this.modelo = modelo;
+this.preco = preco;
+}
+
+}
+```
+
+### Pilares de POO
+Programação Orientada a Objeto sempre será guiada por 4 pilares, sendo eles:
+
+**Herança**: como o próprio nome diz, a herança passa de “pai” para “filho” na escrita do código. Portanto, no objeto principal há vários atributos e métodos que podem originar-se de um atual objeto (pai) para a geração de um novo código (filho).
+A "cadeia de herança" é o termo usado para descrever esse fluxo de herança do protótipo do objeto base (aquele do qual todos os outros herdam) até o "final" da cadeia de herança. 
+
+**Encapsulamento**:A definição de encapsulamento é "a ação de colocar algo dentro ou como se estivesse em uma cápsula". Remover o acesso a partes do seu código e tornar as coisas privadas é exatamente o que o Encapsulamento faz (muitas vezes, as pessoas se referem a ele como "ocultação de dados"). É importante limitar o acesso de quais partes do código podem ser acessadas. Caso não sejam necessárias, torne as coisas mais inacessíveis para não possibilitar efeitos colaterais no estado do objeto.
+ - Visibilidade dos recursos:
+    - Modificador public: Como o próprio nome representa, quando nossa classe, método e atributo é definido como public, qualquer outra classe em qualquer outro pacote, poderá visualizar tais recursos.
+    - Modificador default: O modificador default, está fortemente associado a organização das classes por pacotes, algumas implementações, não precisam estar disponíveis por todo o projeto, e este modificador de acesso, restringe a visibilidade por pacotes.
+    - Modificador private: Marcando um atributo como privado, fechamos o seu acesso em relação a todas as outras classes e fazemos com que o código não compile.
+    - Modificador protected:  Com este modificador, apenas a classe que contém o modificador e os tipos derivados dessa classe tem o acesso.
