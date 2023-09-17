@@ -422,3 +422,7 @@ A "cadeia de herança" é o termo usado para descrever esse fluxo de herança do
     - Modificador default: O modificador default, está fortemente associado a organização das classes por pacotes, algumas implementações, não precisam estar disponíveis por todo o projeto, e este modificador de acesso, restringe a visibilidade por pacotes.
     - Modificador private: Marcando um atributo como privado, fechamos o seu acesso em relação a todas as outras classes e fazemos com que o código não compile.
     - Modificador protected:  Com este modificador, apenas a classe que contém o modificador e os tipos derivados dessa classe tem o acesso.
+
+**Polimorfismo**:Polimorfismo significa "a condição de ocorrer de várias formas diferentes". Se você usou a herança corretamente, agora pode usar tanto os pais de maneira confiável como seus filhos. Quando dois tipos compartilham uma cadeia de herança, eles podem ser usados ​​alternadamente sem erros ou declarações em seu código.
+
+**Abstração**: É a indisponibilidade para determinar a lógica de em ou vários comportamentos em um objeto.
