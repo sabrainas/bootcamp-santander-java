@@ -328,18 +328,28 @@ Ex
 
 Agora para a organização de classes:
 `model : Classes que representam a camada e modelo da aplicação : Cliente, Pedido, NotaFiscal, Usuario;`
+
 `repository: Classes ou interfaces que possuem a finalidade de interagir com tabelas no banco de dados: ClienteRepository;`
+
 `service: Classes que contém regras de negócio do sistema : ClienteService possui o método validar o CPF, do cliente cadastrado;`
+
 `controller: Classes que possuem a finalidade de, disponibilizar os nossos recursos da aplicação, para outras aplicações via padrão HTTP;`
+
 `view: Classes que possuem alguma interação, com a interface gráfica acessada pelo usuário;`
-`util: Pacote que contém, classes utilitárias do sistema: FormatadorNumeroUtil, ValidadorUtil.`
+
+`util: Pacote que contém, classes 
+utilitárias do sistema: FormatadorNumeroUtil, ValidadorUtil.`
 
 ### Getters e Setters
 Os métodos "Getters" e "Setters" são utilizados para buscar valores de atributos ou definir novos valores de atributos, de instâncias de classes.
 O método Getter, retorna o valor do atributo especificado.
-O método get, é responsável por obter o valor atual do atributo, logo ele precisa ser public, retornar um tipo correspondente ao valor, Ex: `public String getNome() {};`
+O método get, é responsável por obter o valor atual do atributo, logo ele precisa ser public, retornar um tipo correspondente ao valor, Ex:
+-  `public String getNome() {};`
+
 O método Setter, define outro novo valor para o atributo especificado.
-O método set, é responsável por definir ou modificar o valor de um atributo em um objeto, logo, ele também precisa ser public, receber um parâmetro do mesmo tipo da variável, mas não retorna nenhum valor void. Ex: `public void setNome(String newNome);`
+O método set, é responsável por definir ou modificar o valor de um atributo em um objeto, logo, ele também precisa ser public, receber um parâmetro do mesmo tipo da variável, mas não retorna nenhum valor void. Ex: 
+- `public void setNome(String newNome);`
+
 
 Ex:
 ```
@@ -426,3 +436,73 @@ A "cadeia de herança" é o termo usado para descrever esse fluxo de herança do
 **Polimorfismo**:Polimorfismo significa "a condição de ocorrer de várias formas diferentes". Se você usou a herança corretamente, agora pode usar tanto os pais de maneira confiável como seus filhos. Quando dois tipos compartilham uma cadeia de herança, eles podem ser usados ​​alternadamente sem erros ou declarações em seu código.
 
 **Abstração**: É a indisponibilidade para determinar a lógica de em ou vários comportamentos em um objeto.
+
+# Collection
+É uma estrutura de dados em que armazeno vários elementos em uma única variável. As coleções podem ser homogêneas e heterogêneas.
+Existem 4 tipos de Collections:
+- `List`: coleção ordenada que permite a inclusão de elementos duplicados. `ArrayList` e `LinkedList`. Se assemelha a uma matriz com comprimento dinâmico.
+- `Set`
+- `Queue`
+- `Map`
+
+Cada uma das classes, possuem subclasses que tem métodos que auxiliam o desenvolvedor na hora de manipular objetos.
+Não aceita tipos primitivos, apenas classes.
+
+## Generics Type
+
+Classe genérica ou uma interface que é parametrizada em relação a tipos
+
+Uma classe comum como:
+```
+public class Box {
+    private Object object;
+
+    public void set(Object object) { this.object = object; }
+    public Object get() { return object; }
+}
+```
+
+Se tornaria:
+```
+/**
+Versão genérica da classe Box.
+@param <T> o tipo do valor sendo armazenado
+*/
+public class Box<T> {
+	// T representa "Type" (tipo)
+    private T t;
+
+    public void set(T t) { this.t = t; }
+    public T get() { return t; }
+}
+```
+
+`<>` é chamado de diamond operator, usado para inserir tipos genéricos.
+Os parâmetros mais usados são:
+- E: Elemento (usado extensivamente pelo Java Collections Framework)
+- K: Chave
+- N: Número
+- T: Tipo
+- V: Valor
+- S, U, V, etc: 2º, 3º, 4º tipos
+
+Generics Types são seguros, é possível evitar erros garantindo que você esteja lidando com dados corretos.
+Torna o código legível.
+Torna o código reutilizável.
+E melhora o desempenho.
+
+## Comparable X Comparator
+
+`Comparable`
+- fornece uma única sequência de ordenação.
+- afeta a classe original
+- fornece o métdodo `compareTo()`
+- está presente no modo `java.lang`
+- pode ordenar  elementos da lista usando método `Collections.sort(List)`
+
+`Comparator`
+- fornece o método `compare()` para ordenar elementos.
+- fornece múltiplas sequências de ordenação.
+- não afeta a classe atual
+- está presente no pacote `java.util`
+- pode ordenar os elementos da lista do tipo `Comparator` usando o método `Collections.sort(List, Comparator)`
