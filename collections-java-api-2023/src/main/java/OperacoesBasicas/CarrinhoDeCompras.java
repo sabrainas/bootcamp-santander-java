@@ -15,26 +15,38 @@ public class CarrinhoDeCompras {
     }
 
     public void removerItem(String nome){
-        List<Item> itemParaRemover = new ArrayList<>();
-        for(Item i : itemList){
-            if(i.getNome().equalsIgnoreCase(nome)){
-                itemParaRemover.add(i);
+        if(!itemList.isEmpty()){
+            List<Item> itemParaRemover = new ArrayList<>();
+            for(Item i : itemList){
+                if(i.getNome().equalsIgnoreCase(nome)){
+                    itemParaRemover.add(i);
+                }
             }
+            itemList.removeAll((itemParaRemover));
+        }else{
+            System.out.println("A lista está vazia");
         }
-        itemList.removeAll((itemParaRemover));
     }
 
     public double calcularValorTotal(){
         double valorTotal = 0d;
-        for(Item item : itemList){
-            double valorItem = item.getPreco() * item.getQtd();
-            valorTotal += valorItem;
+        if(!itemList.isEmpty()){
+            for(Item item : itemList){
+                double valorItem = item.getPreco() * item.getQtd();
+                valorTotal += valorItem;
+            }
+            return valorTotal;
+        }else{
+            throw new RuntimeException("A lista está vazia");
         }
-        return valorTotal;
     }
 
     public void exibirItens(){
-        System.out.println(itemList);
+        if(!itemList.isEmpty()){
+            System.out.println(itemList);
+        }else{
+            System.out.println("A lista está vazia");
+        }
     }
 
     public static void main(String[] args) {
