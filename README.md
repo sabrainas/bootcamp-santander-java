@@ -506,3 +506,39 @@ E melhora o desempenho.
 - não afeta a classe atual
 - está presente no pacote `java.util`
 - pode ordenar os elementos da lista do tipo `Comparator` usando o método `Collections.sort(List, Comparator)`
+
+# Stream API 
+
+Functional Interface: qualquer interface com um Single Abstract Method é uma interface funcional e sua implementação pode ser tratada como expressões lambda.
+
+`Consumer<T>`: Representa uma operação que aceita um argumento do tipo T e não retorna nenhum resultado. É utilizada principalmente para realizar ações ou efeitos colaterais nos elementos Stream sem modificar ou retornar um valor.
+
+```
+public class ConsumerExample{
+    public static void main(String[] args){
+        //criar uma lista de numeros inteiros
+        List<Integer> numeros = Arrays.asList(1, 2, 3, 4, 5);
+
+        //Criar um Consumer para imprimir cada numero
+        Consumer<Integer> imprimirNumero = numero -> System.out.println(numero);
+
+        //usar o Consumer para imprimir cada numero no Stream
+        numeros.stream().forEach(imprimirNumero);
+    }
+}
+```
+
+`Suplier<T>` Representa uma operação que nao aceita nenhum argumento e retorna um resultado do tipo T. É comumente usada para criar ou fornecer novos objetos de um determinado tipo.
+
+```
+public class SupplierExample{
+    public class void main(String[] args){
+        //Criar um Supplier para fornecer uma saudação personalizada
+        Supplier<String> saudacao = () -> "Ola, seja bem vindo";
+
+        //usar o supplier para obter a saudação
+        String mensagemSaudacao = saudacao.get();
+        System.out.println(mensagemSaudacao);
+    }
+}
+```
